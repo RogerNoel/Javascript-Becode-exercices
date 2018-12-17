@@ -1,9 +1,0 @@
-1	Base
-2	math
-3	colors
-4	dates
-5	arrays
-6	dom
-7	misc	5
-
-done 47/48
