@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+	</head>
+	<body>
+		<div>
+			<input type="text" name="part-two" id="part-two" value="00" data-min="00" data-max="99" />
+			<button type="button" id="fix-part-two">Stop</button>
+		</div>
+		<script type="text/javascript">
+			
+			// your code here
+
+    var minCompteur1 = document.getElementById("part-one").getAttribute("data-min");
+    var maxCompteur1 = document.getElementById("part-one").getAttribute("data-max");
+    var minAutresCompteurs = document.getElementById("part-two").getAttribute("data-min");
+    var maxAutresCompteurs = document.getElementById("part-two").getAttribute("data-max");
+
+    // --------------------------------------------compteur 1
+    compteur1 = minCompteur1; // min 460 max 499
+    var increment_var;			// pour stocker le setTimeout
+
+    function increment_fn (){
+        compteur1 ++;
+        //if ()                
+        //console.log(compteur);
+        increment_var = setTimeout(increment_fn, 100);
+        document.getElementById("part-one").setAttribute("value", compteur1);
+     }
+
+	var trigger = false;  // création d'un flag
+	document.getElementById("fix-part-one").addEventListener("click", function(){
+		trigger=!trigger  // inverse le flag à chaque clic
+		if (trigger) {
+			increment_fn();  // lance l'invrémentation
+		}
+		else {
+			clearTimeout(increment_var); // stoppe l'incrémentation
+		}
+	});
+	// ------------------------------------------fin compteur 1
+
+    // Fin
+			
+		</script>
+	</body>
+</html>
